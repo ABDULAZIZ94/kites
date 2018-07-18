@@ -124,11 +124,38 @@
 </code></pre>
 </div>
 
-<p>Kết thúc lệnh trên là bạn đã tạo ra một dự án RESTful API, rất đơn giản?</p>
+<p>Kết thúc lệnh trên là bạn đã tạo ra một dự án RESTful API, rất đơn giản phải không?</p>
 
 <ul>
   <li><a href="/documentation/guide/">Xem chi tiết hướng dẫn</a> tạo một project với kites <a href="/documentation/guide/">tại đây</a>.</li>
 </ul>
+
+<p>Sơ lược qua về kỹ thuật thì <strong>kites</strong> tự động phát hiện các <strong>extensions</strong> đã được install trong thư mục <code class="highlighter-rouge">node_modules</code>, do đó, khi khởi chạy các phần mở rộng này được nạp tự động, một chương trình đơn giản nhất trông như thế này:</p>
+
+<blockquote>
+  <p>Tham số <code class="highlighter-rouge">discover: true</code> nghĩa là nhắc <strong>kites</strong> tự động nạp tất cả các <strong>extensions</strong> phát hiện được trong thư mục <em>node_modules</em>.</p>
+</blockquote>
+
+<div class="highlighter-rouge"><pre class="highlight"><code><span class="s1">'use strict'</span>
+<span class="kr">const</span> <span class="nx">engine</span> <span class="o">=</span> <span class="nx">require</span><span class="p">(</span><span class="s1">'@kites/engine'</span><span class="p">);</span>
+
+<span class="cm">/**
+ * minimalist kites application
+ */</span>
+<span class="nx">engine</span><span class="p">({</span>
+        <span class="na">loadConfig</span><span class="p">:</span> <span class="kc">true</span><span class="p">,</span>
+        <span class="na">discover</span><span class="p">:</span> <span class="kc">true</span>
+    <span class="p">})</span>
+    <span class="p">.</span><span class="nx">init</span><span class="p">()</span>
+    <span class="p">.</span><span class="nx">then</span><span class="p">(</span><span class="kd">function</span> <span class="p">(</span><span class="nx">kites</span><span class="p">)</span> <span class="p">{</span>
+        <span class="nx">kites</span><span class="p">.</span><span class="nx">logger</span><span class="p">.</span><span class="nx">info</span><span class="p">(</span><span class="s1">'Hello world!'</span><span class="p">);</span>
+    <span class="p">})</span>
+    <span class="p">.</span><span class="k">catch</span><span class="p">(</span><span class="kd">function</span> <span class="p">(</span><span class="nx">e</span><span class="p">)</span> <span class="p">{</span>
+        <span class="nx">console</span><span class="p">.</span><span class="nx">error</span><span class="p">(</span><span class="nx">e</span><span class="p">.</span><span class="nx">stack</span><span class="p">);</span>
+        <span class="nx">process</span><span class="p">.</span><span class="nx">exit</span><span class="p">(</span><span class="mi">1</span><span class="p">);</span>
+    <span class="p">})</span>
+</code></pre>
+</div>
 
 <h2>Mục tiêu của dự án Kites</h2>
 
@@ -161,14 +188,14 @@ docker-compose up
 </code></pre>
 </div>
 
-<h2>Templates - Các khuôn mẫu dự án</h2>
+<h2>Templates - Các khuôn mẫu dự án dựng sẵn</h2>
 
 <ul>
   <li>[x] <strong><code class="highlighter-rouge">basic</code></strong>: Template for building from scratch (<strong>default</strong>, current)</li>
-  <li>[x] <strong><code class="highlighter-rouge">apidoc</code></strong>: Template for API Documentation, <a href="https://github.com/nodevn/kites-apidoc">nodevn/kites-apidoc</a></li>
-  <li>[x] <code class="highlighter-rouge">express</code>: Template for Express Application</li>
-  <li>[ ] <code class="highlighter-rouge">restful</code>: Template for generating a RESTful API Server</li>
-  <li>[ ] <code class="highlighter-rouge">framework</code>: Assembling all into complete ship (default, next stage), <a href="https://kites.nodejs.vn/documentation">document</a></li>
+  <li>[x] <strong><code class="highlighter-rouge">apidoc</code></strong>: Template for API Documentation, <a href="https://github.com/nodevn/kites-template-apidoc">nodevn/kites-template-apidoc</a></li>
+  <li>[x] <code class="highlighter-rouge">express</code>: Template for Express Application, <a href="https://github.com/vunb/kites-template-express">nodevn/kites-template-express</a></li>
+  <li>[ ] <code class="highlighter-rouge">restful</code>: Template for generating a RESTful API Server, <a href="https://github.com/vunb/kites-template-restful">nodevn/kites-template-restful</a></li>
+  <li>[ ] <code class="highlighter-rouge">mvc</code>: Assembling all into complete ship (default), <a href="https://github.com/vunb/kites-template-mvc">nodevn/kites-template-mvc</a></li>
   <li>[ ] <code class="highlighter-rouge">spa</code>: Template for generating a Single Page Application (SPA)</li>
   <li>[ ] <code class="highlighter-rouge">cms</code>: Template for generating a Content Management System (CMS)</li>
   <li>[ ] <code class="highlighter-rouge">chat</code>: Template for generating a Chat application</li>
