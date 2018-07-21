@@ -119,6 +119,15 @@
  <div class="api-toc-wrapper">
 <ul id="markdown-toc">
   <li><a href="#kites-requirements" id="markdown-toc-kites-requirements">Yêu cầu tối thiểu</a></li>
+  <li><a href="#kites-mvc-template" id="markdown-toc-kites-mvc-template">MVC Template</a>    <ul>
+      <li><a href="#kites-init-mvc" id="markdown-toc-kites-init-mvc">Xây dựng một ứng dụng Kites MVC?</a>        <ul>
+          <li><a href="#kites-init-mvc-1" id="markdown-toc-kites-init-mvc-1">#1. Khởi tạo dự án của bạn</a></li>
+          <li><a href="#kites-init-mvc-2" id="markdown-toc-kites-init-mvc-2">#2. Phát triển và bảo trì dự án MVC</a></li>
+          <li><a href="#kites-init-mvc-2" id="markdown-toc-kites-init-mvc-2">#3. Thiết lập cấu hình</a></li>
+        </ul>
+      </li>
+    </ul>
+  </li>
   <li><a href="#kites-apidoc-template" id="markdown-toc-kites-apidoc-template">ApiDoc Template</a>    <ul>
       <li><a href="#kites-init-apidoc" id="markdown-toc-kites-init-apidoc">Cách tạo ApiDoc với kites như thế nào?</a>        <ul>
           <li><a href="#kites-init-apidoc-1" id="markdown-toc-kites-init-apidoc-1">#1. Khởi tạo dự án của bạn</a></li>
@@ -163,6 +172,117 @@
   </ul>
 </section>
 
+<h2 id="kites-mvc-template">MVC Template</h2>
+
+<p><strong>Kites MVC</strong> là template dựng sẵn tuân thủ theo mẫu kiến trúc phần mềm <strong><a href="https://en.wikipedia.org/wiki/Model%E2%80%93view%E2%80%93controller">Model - View - Controller (MVC)</a></strong>. Điều này có nghĩa là việc sử dụng Kites MVC sẽ giúp bạn có thể tạo ra được các ứng dụng trở nên đơn giản hơn đối với các dự án có nhiều nghiệp vụ phức tạp.</p>
+
+<h3>Kiến trúc mô hình MVC</h3>
+
+<p><img src="/images/kites/templates/mvc3.jpg" alt="mvc model" /></p>
+
+<p><strong>MVC</strong> là một kiến trúc phần mềm hay mô hình thiết kế được sử dụng trong kỹ thuật phần mềm. Thực chất, mô hình này sẽ phân bố source code thành 3 phần, mỗi thành phần có một nhiệm vụ riêng biệt và độc lập với các thành phần khác (như hình).</p>
+
+<ul>
+  <li><strong>Controller</strong> - Có nhiệm vụ điều hướng các yêu cầu từ người dùng tới các phương thức xử lý phù hợp.</li>
+  <li><strong>Model</strong> - Đây là thành phần chứa tất cả các nghiệp vụ logic, phương thức (hàm) xử lý, truy xuất database, mô tả đối tượng dữ liệu, …</li>
+  <li><strong>View</strong> - Đảm nhận việc hiển thị thông tin, tương tác với người dùng, nơi chứa tất cả các đối tượng GUI như textbox, images, …</li>
+</ul>
+
+<p>Khi có một yêu cầu từ phía client gửi đến server, bộ phận <code class="highlighter-rouge">controller</code> có nhiệm vụ nhận yêu cầu, xử lý yêu cầu đó. Và nếu cần, nó sẽ gọi đến phần <code class="highlighter-rouge">model</code>, vốn là bộ phần làm việc với Database. Sau khi xử lý xong, toàn bộ kết quả được đẩy về phần <code class="highlighter-rouge">View</code>. Tại <code class="highlighter-rouge">View</code>, sẽ biên dịch ra mã Html tạo nên giao diện, và trả toàn bộ html về trình duyệt để hiển thị.</p>
+
+<h4>Kites Service</h4>
+
+<p>Kites bổ sung thêm tầng <strong>Service</strong> nằm bên dưới kiến trúc MVC, nhằm mục đích tạo ra các nghiệp vụ logic nhiều bước quy trình, thực hiện các tác vụ của ứng dụng, nơi trung chuyển dữ liệu dữ các hệ thống và (hoặc) truy xuất tới các đối tượng dữ liệu từ nhiều nguồn khác nhau, như: Database, File, Web service, Network, Sub system …</p>
+
+<p>Từ trên xuống dưới thì kiến trúc của Kites-MVC được thể hiện theo thứ tự như sau:</p>
+
+<ol>
+  <li>MVC Layer</li>
+  <li>Service Layer (*)</li>
+  <li>Data Access Objects Layer - Truy xuất tới cơ sở dữ liệu hoặc tới các hệ thống khác như LDAP, Web Service, …</li>
+</ol>
+
+<h3 id="kites-init-mvc">Xây dựng một ứng dụng Kites MVC?</h3>
+
+<section>
+
+  <h4 id="kites-init-mvc-1" class="code">#1. Khởi tạo dự án của bạn</h4>
+
+  <p>Sau khi cài đặt <a href="https://www.npmjs.com/package/@kites/cli">@kites/cli</a> thì bạn có thể khởi tạo dự án của mình bằng các lệnh sau:</p>
+
+  <div class="highlighter-rouge"><pre class="highlight"><code><span class="c"># khởi tạo dự án</span>
+kites init my-project --template mvc
+
+<span class="c"># di chuyển vào thư mục dự án</span>
+<span class="nb">cd </span>my-project
+
+<span class="c"># cài đặt các phụ thuộc và công cụ build</span>
+npm install
+
+<span class="c"># chạy lệnh sau đây để xem thành quả tại http://localhost:3000</span>
+npm start
+</code></pre>
+  </div>
+
+  <h4 id="kites-init-mvc-2" class="code">#2. Phát triển và bảo trì dự án MVC</h4>
+
+  <div class="highlighter-rouge"><pre class="highlight"><code><span class="c"># chạy ở chế độ phát triển</span>
+npm run dev
+</code></pre>
+  </div>
+
+  <p>Bố cục của dự án được tổ chức như hình sau đây.</p>
+
+  <p><img src="/images/kites/templates/mvc2.png" alt="mvc" /></p>
+
+  <h4 id="kites-init-mvc-2" class="code">#3. Thiết lập cấu hình</h4>
+
+  <p>Lưu ý: Thiết lập cấu hình kết nối cho kites trong file <code class="highlighter-rouge">kites.config.json</code></p>
+
+  <p>Dưới đây là nội dung các cấu hình được thiết lập mặc định, bạn hoàn toàn có thể thay đổi nó cho dự án của mình.</p>
+
+  <div class="highlighter-rouge"><pre class="highlight"><code><span class="p">{</span><span class="w">
+    </span><span class="nt">"extensionsLocationCache"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span><span class="w">
+    </span><span class="nt">"logger"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+        </span><span class="nt">"console"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+            </span><span class="nt">"transport"</span><span class="p">:</span><span class="w"> </span><span class="s2">"console"</span><span class="p">,</span><span class="w">
+            </span><span class="nt">"level"</span><span class="p">:</span><span class="w"> </span><span class="s2">"info"</span><span class="w">
+        </span><span class="p">}</span><span class="w">
+    </span><span class="p">},</span><span class="w">
+    </span><span class="nt">"extensions"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
+    </span><span class="nt">"kites-api"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+        </span><span class="nt">"connection"</span><span class="p">:</span><span class="w"> </span><span class="s2">"memory"</span><span class="p">,</span><span class="w">
+        </span><span class="nt">"dataSource"</span><span class="p">:</span><span class="w"> </span><span class="p">[{</span><span class="w">
+            </span><span class="nt">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"memory"</span><span class="p">,</span><span class="w">
+            </span><span class="nt">"driver"</span><span class="p">:</span><span class="w"> </span><span class="s2">"memory"</span><span class="p">,</span><span class="w">
+            </span><span class="nt">"active"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="w">
+        </span><span class="p">},</span><span class="w"> </span><span class="p">{</span><span class="w">
+            </span><span class="nt">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"mysql"</span><span class="p">,</span><span class="w">
+            </span><span class="nt">"driver"</span><span class="p">:</span><span class="w"> </span><span class="s2">"mysql"</span><span class="p">,</span><span class="w">
+            </span><span class="nt">"host"</span><span class="p">:</span><span class="w"> </span><span class="s2">"localhost"</span><span class="p">,</span><span class="w">
+            </span><span class="nt">"port"</span><span class="p">:</span><span class="w"> </span><span class="s2">"3306"</span><span class="p">,</span><span class="w">
+            </span><span class="nt">"username"</span><span class="p">:</span><span class="w"> </span><span class="s2">"root"</span><span class="p">,</span><span class="w">
+            </span><span class="nt">"password"</span><span class="p">:</span><span class="w"> </span><span class="s2">""</span><span class="p">,</span><span class="w">
+            </span><span class="nt">"database"</span><span class="p">:</span><span class="w"> </span><span class="s2">"test"</span><span class="p">,</span><span class="w">
+            </span><span class="nt">"active"</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="p">,</span><span class="w">
+            </span><span class="nt">"pool"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="w">
+        </span><span class="p">}]</span><span class="w">
+    </span><span class="p">},</span><span class="w">
+    </span><span class="nt">"express"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+        </span><span class="nt">"static"</span><span class="p">:</span><span class="w"> </span><span class="s2">"./public"</span><span class="p">,</span><span class="w">
+        </span><span class="nt">"httpPort"</span><span class="p">:</span><span class="w"> </span><span class="mi">3000</span><span class="p">,</span><span class="w">
+        </span><span class="nt">"poweredBy"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Kites"</span><span class="p">,</span><span class="w">
+        </span><span class="nt">"views"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+            </span><span class="nt">"engine"</span><span class="p">:</span><span class="w"> </span><span class="s2">"ejs"</span><span class="p">,</span><span class="w">
+            </span><span class="nt">"path"</span><span class="p">:</span><span class="w"> </span><span class="s2">"content/views"</span><span class="w">
+        </span><span class="p">}</span><span class="w">
+    </span><span class="p">}</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre>
+  </div>
+
+</section>
+
 <h2 id="kites-apidoc-template">ApiDoc Template</h2>
 
 <p><strong>ApiDoc</strong> hay tài liệu hướng dẫn sử dụng API là một nội dung kỹ thuật có thể phân phối hoặc dùng để tham chiếu, bao gồm những hướng dẫn sử dụng và tích hợp API một cách hiệu quả.</p>
@@ -183,7 +303,7 @@
 <ul>
   <li>Truy cập demo: <a href="https://kites.nodejs.vn/docs">https://kites.nodejs.vn/docs</a></li>
   <li>Một trang khác: <a href="https://docs.yeu.ai/">https://docs.yeu.ai/</a></li>
-  <li>Trang của bạn?</li>
+  <li>Trang của bạn sẽ sử dụng <strong>kites</strong> chứ ?</li>
 </ul>
 
 <h3 id="kites-init-apidoc">Cách tạo ApiDoc với kites như thế nào?</h3>
