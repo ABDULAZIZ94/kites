@@ -2,38 +2,38 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
     <url>
         <loc>https://kites.nodejs.vn/</loc>
-        <lastmod>2018-07-22T01:21:06.477Z</lastmod>
+        <lastmod>2018-07-22T01:25:33.581Z</lastmod>
     </url>
     <url>
         <loc>https://kites.nodejs.vn/about/</loc>
-        <lastmod>2018-07-22T01:21:06.448Z</lastmod>
-    </url>
-    <url>
-        <loc>https://kites.nodejs.vn/github/</loc>
-        <lastmod>2018-07-22T01:21:06.458Z</lastmod>
+        <lastmod>2018-07-22T01:25:33.540Z</lastmod>
     </url>
     <url>
         <loc>https://kites.nodejs.vn/documentation/</loc>
-        <lastmod>2018-07-22T01:21:06.489Z</lastmod>
+        <lastmod>2018-07-22T01:25:33.583Z</lastmod>
+    </url>
+    <url>
+        <loc>https://kites.nodejs.vn/github/</loc>
+        <lastmod>2018-07-22T01:25:33.563Z</lastmod>
     </url>
     <url>
         <loc>https://kites.nodejs.vn/documentation/guide/</loc>
-        <lastmod>2018-07-22T01:21:06.473Z</lastmod>
+        <lastmod>2018-07-22T01:25:33.577Z</lastmod>
     </url>
     <url>
         <loc>https://kites.nodejs.vn/documentation/overview/</loc>
-        <lastmod>2018-07-22T01:21:06.503Z</lastmod>
-    </url>
-    <url>
-        <loc>https://kites.nodejs.vn/documentation/kites/cli/</loc>
-        <lastmod>2018-07-22T01:21:06.455Z</lastmod>
-    </url>
-    <url>
-        <loc>https://kites.nodejs.vn/documentation/kites/api/</loc>
-        <lastmod>2018-07-22T01:21:06.452Z</lastmod>
+        <lastmod>2018-07-22T01:25:33.597Z</lastmod>
     </url>
     <url>
         <loc>https://kites.nodejs.vn/documentation/kites/templates/</loc>
-        <lastmod>2018-07-22T01:21:06.525Z</lastmod>
+        <lastmod>2018-07-22T01:25:33.617Z</lastmod>
+    </url>
+    <url>
+        <loc>https://kites.nodejs.vn/documentation/kites/api/</loc>
+        <lastmod>2018-07-22T01:25:33.544Z</lastmod>
+    </url>
+    <url>
+        <loc>https://kites.nodejs.vn/documentation/kites/cli/</loc>
+        <lastmod>2018-07-22T01:25:33.547Z</lastmod>
     </url>
 </urlset>
