@@ -2,38 +2,38 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
     <url>
         <loc>https://kites.nodejs.vn/</loc>
-        <lastmod>2018-07-22T00:57:22.237Z</lastmod>
+        <lastmod>2018-07-22T01:21:06.477Z</lastmod>
     </url>
     <url>
         <loc>https://kites.nodejs.vn/about/</loc>
-        <lastmod>2018-07-22T00:57:22.203Z</lastmod>
-    </url>
-    <url>
-        <loc>https://kites.nodejs.vn/documentation/</loc>
-        <lastmod>2018-07-22T00:57:22.259Z</lastmod>
+        <lastmod>2018-07-22T01:21:06.448Z</lastmod>
     </url>
     <url>
         <loc>https://kites.nodejs.vn/github/</loc>
-        <lastmod>2018-07-22T00:57:22.217Z</lastmod>
+        <lastmod>2018-07-22T01:21:06.458Z</lastmod>
+    </url>
+    <url>
+        <loc>https://kites.nodejs.vn/documentation/</loc>
+        <lastmod>2018-07-22T01:21:06.489Z</lastmod>
     </url>
     <url>
         <loc>https://kites.nodejs.vn/documentation/guide/</loc>
-        <lastmod>2018-07-22T00:57:22.234Z</lastmod>
+        <lastmod>2018-07-22T01:21:06.473Z</lastmod>
     </url>
     <url>
         <loc>https://kites.nodejs.vn/documentation/overview/</loc>
-        <lastmod>2018-07-22T00:57:22.278Z</lastmod>
-    </url>
-    <url>
-        <loc>https://kites.nodejs.vn/documentation/kites/api/</loc>
-        <lastmod>2018-07-22T00:57:22.210Z</lastmod>
-    </url>
-    <url>
-        <loc>https://kites.nodejs.vn/documentation/kites/templates/</loc>
-        <lastmod>2018-07-22T00:57:22.300Z</lastmod>
+        <lastmod>2018-07-22T01:21:06.503Z</lastmod>
     </url>
     <url>
         <loc>https://kites.nodejs.vn/documentation/kites/cli/</loc>
-        <lastmod>2018-07-22T00:57:22.214Z</lastmod>
+        <lastmod>2018-07-22T01:21:06.455Z</lastmod>
+    </url>
+    <url>
+        <loc>https://kites.nodejs.vn/documentation/kites/api/</loc>
+        <lastmod>2018-07-22T01:21:06.452Z</lastmod>
+    </url>
+    <url>
+        <loc>https://kites.nodejs.vn/documentation/kites/templates/</loc>
+        <lastmod>2018-07-22T01:21:06.525Z</lastmod>
     </url>
 </urlset>
