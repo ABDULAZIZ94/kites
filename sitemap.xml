@@ -2,38 +2,38 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
     <url>
         <loc>https://kites.nodejs.vn/</loc>
-        <lastmod>2018-07-22T00:54:17.134Z</lastmod>
-    </url>
-    <url>
-        <loc>https://kites.nodejs.vn/documentation/</loc>
-        <lastmod>2018-07-22T00:54:17.153Z</lastmod>
+        <lastmod>2018-07-22T00:57:22.237Z</lastmod>
     </url>
     <url>
         <loc>https://kites.nodejs.vn/about/</loc>
-        <lastmod>2018-07-22T00:54:17.029Z</lastmod>
+        <lastmod>2018-07-22T00:57:22.203Z</lastmod>
+    </url>
+    <url>
+        <loc>https://kites.nodejs.vn/documentation/</loc>
+        <lastmod>2018-07-22T00:57:22.259Z</lastmod>
     </url>
     <url>
         <loc>https://kites.nodejs.vn/github/</loc>
-        <lastmod>2018-07-22T00:54:17.086Z</lastmod>
+        <lastmod>2018-07-22T00:57:22.217Z</lastmod>
     </url>
     <url>
         <loc>https://kites.nodejs.vn/documentation/guide/</loc>
-        <lastmod>2018-07-22T00:54:17.104Z</lastmod>
+        <lastmod>2018-07-22T00:57:22.234Z</lastmod>
     </url>
     <url>
         <loc>https://kites.nodejs.vn/documentation/overview/</loc>
-        <lastmod>2018-07-22T00:54:17.168Z</lastmod>
+        <lastmod>2018-07-22T00:57:22.278Z</lastmod>
     </url>
     <url>
         <loc>https://kites.nodejs.vn/documentation/kites/api/</loc>
-        <lastmod>2018-07-22T00:54:17.049Z</lastmod>
+        <lastmod>2018-07-22T00:57:22.210Z</lastmod>
     </url>
     <url>
         <loc>https://kites.nodejs.vn/documentation/kites/templates/</loc>
-        <lastmod>2018-07-22T00:54:17.201Z</lastmod>
+        <lastmod>2018-07-22T00:57:22.300Z</lastmod>
     </url>
     <url>
         <loc>https://kites.nodejs.vn/documentation/kites/cli/</loc>
-        <lastmod>2018-07-22T00:54:17.070Z</lastmod>
+        <lastmod>2018-07-22T00:57:22.214Z</lastmod>
     </url>
 </urlset>
