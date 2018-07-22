@@ -123,7 +123,7 @@
       <li><a href="#kites-init-mvc" id="markdown-toc-kites-init-mvc">Xây dựng một ứng dụng Kites MVC?</a>        <ul>
           <li><a href="#kites-init-mvc-1" id="markdown-toc-kites-init-mvc-1">#1. Khởi tạo dự án của bạn</a></li>
           <li><a href="#kites-init-mvc-2" id="markdown-toc-kites-init-mvc-2">#2. Phát triển và bảo trì dự án MVC</a></li>
-          <li><a href="#kites-init-mvc-2" id="markdown-toc-kites-init-mvc-2">#3. Thiết lập cấu hình</a></li>
+          <li><a href="#kites-init-mvc-3" id="markdown-toc-kites-init-mvc-3">#3. Thiết lập cấu hình</a></li>
         </ul>
       </li>
     </ul>
@@ -196,11 +196,23 @@
 
 <p>Từ trên xuống dưới thì kiến trúc của Kites-MVC được thể hiện theo thứ tự như sau:</p>
 
-<ol>
-  <li>MVC Layer</li>
-  <li>Service Layer (*)</li>
-  <li>Data Access Objects Layer - Truy xuất tới cơ sở dữ liệu hoặc tới các hệ thống khác như LDAP, Web Service, …</li>
-</ol>
+<ul>
+  <li>
+    <ol>
+      <li>MVC Layer</li>
+    </ol>
+  </li>
+  <li>
+    <ol>
+      <li>Service Layer (*)</li>
+    </ol>
+  </li>
+  <li>
+    <ol>
+      <li>Data Access Objects Layer - Truy xuất tới cơ sở dữ liệu hoặc tới các hệ thống khác như LDAP, Web Service, …</li>
+    </ol>
+  </li>
+</ul>
 
 <h3 id="kites-init-mvc">Xây dựng một ứng dụng Kites MVC?</h3>
 
@@ -237,7 +249,7 @@ npm run dev
 
 </section>
 
-<h4 id="kites-init-mvc-2" class="code">#3. Thiết lập cấu hình</h4>
+<h4 id="kites-init-mvc-3" class="code">#3. Thiết lập cấu hình</h4>
 
 <p>Lưu ý: Thiết lập cấu hình kết nối cho kites trong file <code class="highlighter-rouge">kites.config.json</code></p>
 
